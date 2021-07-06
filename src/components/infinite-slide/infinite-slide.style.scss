@@ -1,0 +1,48 @@
+.container{
+    display: flex;
+    height: 100vh;
+
+    .view {
+
+        width: 400px;
+        overflow: hidden;
+        margin: auto;
+
+        .lane{
+            width: 800px;
+            display: flex;
+
+            .item{
+                flex: 1;
+                animation: anim 5s linear infinite;
+            }
+
+           
+        }
+    }
+}
+
+@keyframes anim {
+    100%{
+        transform: translateX( -400px );
+    }
+}
+
+
+
+
+.red{
+    background-color: red;
+}
+
+.orange{
+    background-color: orange;
+}
+
+.orangered{
+    background-color: orangered;
+}
+
+.purple{
+    background-color: purple;
+}

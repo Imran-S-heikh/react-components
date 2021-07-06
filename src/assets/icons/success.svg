@@ -1,0 +1,25 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 455.11 455.11">
+	<defs>
+		<style>
+			.cls-1,.cls-5{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#f90000;}.cls-4{fill:#7437af;}.cls-5{stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:30px;}.cls-6{fill:#4e2b7f;}
+		</style>
+		<clipPath id="clip-path">
+			<rect class="cls-1" width="455.11" height="455.11" />
+		</clipPath>
+	</defs>
+	<title>
+		Asset 1
+	</title>
+	<g id="Layer_2" data-name="Layer 2">
+		<g id="Layer_1-2" data-name="Layer 1">
+			<g class="cls-2">
+				<circle class="cls-3" cx="227.56" cy="227.56" r="212.56" transform="translate(-94.26 227.56) rotate(-45)" />
+				<path d="M227.56,30A197.56,197.56,0,0,1,367.25,367.25,197.56,197.56,0,0,1,87.86,87.86,196.3,196.3,0,0,1,227.56,30m0-30C101.88,0,0,101.88,0,227.56S101.88,455.11,227.56,455.11,455.11,353.23,455.11,227.56,353.23,0,227.56,0Z" />
+				<path class="cls-4" d="M227.56,0C353.23,0,455.11,101.88,455.11,227.56S353.23,455.11,227.56,455.11,0,353.23,0,227.56,101.88,0,227.56,0" />
+				<path class="cls-5" d="M351.29,142.22,203.38,304.36a24.31,24.31,0,0,1-37,0l-62.58-69.69" />
+				<path class="cls-6" d="M455.11,227.56c0,125.15-102.4,227.55-227.55,227.55C155,455.11,91,422.4,49.78,369.78,88.18,401.07,138,419.56,192,419.56c125.16,0,227.55-102.4,227.55-227.56,0-54-18.48-103.82-49.77-142.22C422.4,91,455.11,155,455.11,227.56" />
+			</g>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,100 @@
+$done-length  : 355.18;
+$circle-length: 1335.74px;
+
+body {
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  height          : 100vh;
+  background-color: rgb(78, 78, 78);
+}
+
+.done {
+  stroke-dasharray   : $done-length;
+  // fill            : red;
+  animation          : done 900ms;
+  stroke             : #fff;
+  stroke-width       : 2rem;
+  animation-fill-mode: forwards;
+}
+
+.circle {
+  stroke-dasharray   : $circle-length;
+  // fill            : red;
+  animation          : circle 900ms;
+  stroke             : #fff;
+  stroke-width       : 2rem;
+  animation-fill-mode: forwards;
+
+}
+
+.inner-circle {
+  animation          : circleAnim 600ms linear 800ms;
+  opacity            : 0;
+  animation-fill-mode: forwards;
+}
+
+.success {
+  animation: containerAnim 600ms linear 800ms;
+
+}
+
+@keyframes circle {
+  0% {
+    stroke-dashoffset: $circle-length;
+  }
+
+  60% {
+    stroke-dashoffset: 0;
+    opacity          : 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes done {
+  0% {
+    stroke-dashoffset: $done-length;
+  }
+
+  40% {
+    stroke-dashoffset: 710.36px;
+    opacity          : 1;
+  }
+
+  100% {
+    opacity          : 0;
+    stroke-dashoffset: 710.36px;
+
+  }
+}
+
+@keyframes circleAnim {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes containerAnim {
+  0% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

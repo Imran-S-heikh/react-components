@@ -1,0 +1,45 @@
+.floating-btn {
+
+    width        : 50px;
+    height       : 50px;
+    background   : rgb(61, 61, 224);
+    position     : absolute;
+    border-radius: 50%;
+    top          : 80%;
+    right        : 20%;
+
+    .icon {
+        position : absolute;
+        top      : 50%;
+        left     : 50%;
+        transform: translate(-50%, -50%);
+        color    : #fff;
+    }
+
+    .circle {
+        position        : absolute;
+        // top             : 50%;
+        // left            : 50%;
+        // transform       : translate(-50%, -50%);
+        animation       : anim 3s linear infinite;
+        background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+        width           : 50px;
+        height          : 50px;
+        border-radius: 50%;
+        transform-origin: 50% 50%;
+        z-index: -1;
+        
+    }
+}
+
+@keyframes anim {
+    0% {
+        opacity  : 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity  : 0;
+        transform: scale(5);
+    }
+}

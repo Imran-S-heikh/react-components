@@ -1,0 +1,36 @@
+.btn {
+    border            : none;
+    outline           : none;
+    background        : transparent;
+    display           : flex;
+    // justify-content: space-between;
+    width             : 100%;
+    cursor            : pointer;
+    height            : 5rem;
+    align-items       : center;
+    padding-left: 2rem;
+
+
+
+    .label {
+        font-size  : 1.6rem;
+        font-weight: 600;
+        margin-left: 2rem;
+        color: #fff;
+    }
+
+    .icon {
+        width: 2.5rem;
+        fill: #fff;
+    }
+
+    &.round {
+        border-radius: 5rem;
+    }
+
+
+}
+
+.bg-green {
+    background: var(--green);
+}

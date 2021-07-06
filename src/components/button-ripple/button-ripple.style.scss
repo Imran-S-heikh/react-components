@@ -1,0 +1,27 @@
+.btn-ripple{
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    .ripple{
+        border-radius: 50%;
+        animation: ripple-anim linear 500ms;
+        width: calc( 100% / 10 );
+        aspect-ratio: 1 / 1;
+        display: block;
+        position: absolute;
+        animation-fill-mode: forwards;
+        pointer-events: none;
+        transition: opacity 600ms;
+    }
+}
+
+@keyframes ripple-anim {
+    from{
+        transform: scale(1);
+    }
+
+    to{
+        transform: scale(20);
+    }
+}
