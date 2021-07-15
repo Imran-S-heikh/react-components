@@ -1,14 +1,11 @@
-.Bd\(n\) {
-  border: none;
-}
-.Bgc\(gray\) {
-  background-color: gray;
-}
-.C\(\#fff\) {
-  color: #fff;
+.Bgc\(red\) {
+  background-color: red;
 }
 .D\(f\) {
   display: flex;
+}
+.Fxd\(c\) {
+  flex-direction: column;
 }
 .Ai\(c\) {
   align-items: center;
@@ -16,21 +13,18 @@
 .Jc\(c\) {
   justify-content: center;
 }
-.H\(100vh\) {
-  height: 100vh;
+.H\(10rem\) {
+  height: 10rem;
 }
-.H\(2rem\) {
-  height: 2rem;
+.H\(15rem\) {
+  height: 15rem;
 }
-.O\(n\) {
-  outline: none;
-}
-.W\(100rem\) {
-  width: 100rem;
+.Mt\(10rem\) {
+  margin-top: 10rem;
 }
 .W\(10rem\) {
   width: 10rem;
 }
-.W\(5rem\) {
-  width: 5rem;
+.W\(15rem\) {
+  width: 15rem;
 }

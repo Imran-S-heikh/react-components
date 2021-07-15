@@ -6,17 +6,18 @@ import './button-ripple.style.scss';
 interface Props {
     children: ReactNode,
     color?: string,
-    className?: string  
+    className?: string,
+    onClick?: ()=>void  
 }
 
-function ButtonRipple({ children,color='rgba(255,255,255,.5)',className }: Props): ReactElement {
+function ButtonRipple({ children,color='rgba(255,255,255,.5)',className,onClick }: Props): ReactElement {
 
     const buttonRef = useRef<HTMLButtonElement | null>(null);
     const rippleRef = useRef<HTMLSpanElement | null>(null);
 
     const handleMouseDown = (event: React.MouseEvent<HTMLButtonElement>) => {
         const left = event.clientX - event.currentTarget.offsetLeft;
-        const top = event.clientY - event.currentTarget.offsetTop;
+        const top = event.clientY - event.currentTarget.getBoundingClientRect().top;
 
 
         if (buttonRef.current) {
@@ -26,11 +27,15 @@ function ButtonRipple({ children,color='rgba(255,255,255,.5)',className }: Props
             }
 
             const element = document.createElement("span");
+            const rippleWidth = buttonRef.current.clientWidth/10;
+            // const height = buttonRef.current.clientHeight;
 
             element.classList.add('ripple');
-            element.style.top = `${top}px`;
-            element.style.left = `${left}px`;
+            element.style.top = `${top - (rippleWidth/2)}px`;
+            element.style.left = `${left - (rippleWidth/2)}px`;
             element.style.backgroundColor = color;
+            element.style.width = `${rippleWidth}px`;
+            element.style.height = `${rippleWidth}px`;
 
             buttonRef.current.appendChild(element);
 
@@ -45,7 +50,7 @@ function ButtonRipple({ children,color='rgba(255,255,255,.5)',className }: Props
     }
 
     return (
-        <button ref={buttonRef} onMouseUp={handleMouseUp} onMouseDown={handleMouseDown} className={clsx('btn-ripple',className)}>
+        <button onClick={onClick} ref={buttonRef} onMouseUp={handleMouseUp} onMouseDown={handleMouseDown} className={clsx('btn-ripple',className)}>
             {children}
         </button>
     )

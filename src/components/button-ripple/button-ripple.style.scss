@@ -1,27 +1,33 @@
-.btn-ripple{
-    cursor: pointer;
+.btn-ripple {
+    cursor  : pointer;
     position: relative;
     overflow: hidden;
 
-    .ripple{
+    .ripple {
         border-radius: 50%;
-        animation: ripple-anim linear 500ms;
-        width: calc( 100% / 10 );
-        aspect-ratio: 1 / 1;
-        display: block;
-        position: absolute;
+        animation    : ripple-anim linear 500ms;
+        // width        : calc(100% / 10);
+        // aspect-ratio : 1 / 1;
+
+        // @supports not (aspect-ratio: 1 / 1) {
+        //     height: 10px;
+        //     width: 10px;
+        // }
+
+        display            : block;
+        position           : absolute;
         animation-fill-mode: forwards;
-        pointer-events: none;
-        transition: opacity 600ms;
+        pointer-events     : none;
+        transition         : opacity 600ms;
     }
 }
 
 @keyframes ripple-anim {
-    from{
+    from {
         transform: scale(1);
     }
 
-    to{
+    to {
         transform: scale(20);
     }
 }
