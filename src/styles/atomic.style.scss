@@ -1,5 +1,8 @@
-.Bgc\(red\) {
-  background-color: red;
+.Bdrs\(1rem\) {
+  border-radius: 1rem;
+}
+.Bgc\(orangered\) {
+  background-color: orangered;
 }
 .D\(f\) {
   display: flex;
@@ -10,21 +13,27 @@
 .Ai\(c\) {
   align-items: center;
 }
-.Jc\(c\) {
-  justify-content: center;
-}
 .H\(10rem\) {
   height: 10rem;
-}
-.H\(15rem\) {
-  height: 15rem;
 }
 .Mt\(10rem\) {
   margin-top: 10rem;
 }
+.T\(10\) {
+  top: 10;
+}
+.T\(10rem\) {
+  top: 10rem;
+}
+.T\(16rem\) {
+  top: 16rem;
+}
+.Pos\(a\) {
+  position: absolute;
+}
+.W\(100\%\) {
+  width: 100%;
+}
 .W\(10rem\) {
   width: 10rem;
-}
-.W\(15rem\) {
-  width: 15rem;
 }

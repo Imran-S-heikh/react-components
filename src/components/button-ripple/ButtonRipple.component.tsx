@@ -1,5 +1,6 @@
 import clsx from 'clsx';
-import React, { ReactElement, ReactNode } from 'react';
+import React, { MutableRefObject, ReactElement, ReactNode } from 'react';
+import { useEffect } from 'react';
 import { useRef } from 'react';
 import './button-ripple.style.scss';
 
@@ -7,17 +8,20 @@ interface Props {
     children: ReactNode,
     color?: string,
     className?: string,
-    onClick?: ()=>void  
+    onClick?: (e:React.MouseEvent<HTMLButtonElement>) => void
 }
 
-function ButtonRipple({ children,color='rgba(255,255,255,.5)',className,onClick }: Props): ReactElement {
+const ButtonRipple = React.forwardRef(({ children, color = 'rgba(255,255,255,.5)', className, onClick }: Props,ref:any): ReactElement=> {
 
     const buttonRef = useRef<HTMLButtonElement | null>(null);
     const rippleRef = useRef<HTMLSpanElement | null>(null);
 
     const handleMouseDown = (event: React.MouseEvent<HTMLButtonElement>) => {
-        const left = event.clientX - event.currentTarget.offsetLeft;
-        const top = event.clientY - event.currentTarget.getBoundingClientRect().top;
+
+        const rect = event.currentTarget.getBoundingClientRect();
+
+        const left = event.clientX - rect.left;
+        const top = event.clientY - rect.top;
 
 
         if (buttonRef.current) {
@@ -27,12 +31,12 @@ function ButtonRipple({ children,color='rgba(255,255,255,.5)',className,onClick 
             }
 
             const element = document.createElement("span");
-            const rippleWidth = buttonRef.current.clientWidth/10;
+            const rippleWidth = buttonRef.current.clientWidth / 10;
             // const height = buttonRef.current.clientHeight;
 
             element.classList.add('ripple');
-            element.style.top = `${top - (rippleWidth/2)}px`;
-            element.style.left = `${left - (rippleWidth/2)}px`;
+            element.style.top = `${top - (rippleWidth / 2)}px`;
+            element.style.left = `${left - (rippleWidth / 2)}px`;
             element.style.backgroundColor = color;
             element.style.width = `${rippleWidth}px`;
             element.style.height = `${rippleWidth}px`;
@@ -43,17 +47,37 @@ function ButtonRipple({ children,color='rgba(255,255,255,.5)',className,onClick 
         }
     }
 
-    const handleMouseUp = ()=>{
-        if(rippleRef.current){
+    useEffect(()=>{
+
+        document.addEventListener('mouseup',()=>{
+            if (rippleRef.current) {
+                rippleRef.current.style.opacity = '0';
+            }
+        })
+
+        return ()=>{
+            document.removeEventListener('mouseup',handleMouseUp)
+        }
+    })
+
+    const handleMouseUp = () => {
+        if (rippleRef.current) {
             rippleRef.current.style.opacity = '0';
         }
     }
 
+    const handleRef = (btnRef:HTMLButtonElement)=>{
+        buttonRef.current = btnRef;
+        if (ref && 'current' in ref) {
+            ref.current = btnRef
+        }
+    }
+
     return (
-        <button onClick={onClick} ref={buttonRef} onMouseUp={handleMouseUp} onMouseDown={handleMouseDown} className={clsx('btn-ripple',className)}>
+        <button onClick={onClick} ref={handleRef} onMouseUp={handleMouseUp} onMouseDown={handleMouseDown} className={clsx('btn-ripple', className)}>
             {children}
         </button>
     )
-}
+})
 
-export default ButtonRipple
+export default ButtonRipple;
