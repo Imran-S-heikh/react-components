@@ -1,4 +1,4 @@
-import { ExpandMore } from '@material-ui/icons';
+// import { ExpandMore } from '@material-ui/icons';
 import clsx from 'clsx';
 import React, { MouseEvent, ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
 import Hide from '../../molecules/Hide.mole';
@@ -79,7 +79,7 @@ function DropDown({ label, options, style, startIcon,btnStyle }: Props): ReactEl
                             {startIcon}
                         </Hide>
                         <p className="subtitle-2 flex-1">{active}</p>
-                        <ExpandMore className="icon" />
+                        {/* <ExpandMore className="icon" /> */}
                     </div>
                 </ButtonRipple>
                 <Popper ref={popperRef} open={Boolean(anchorEl)} anchorEl={anchorEl} placement="bottom-end">
